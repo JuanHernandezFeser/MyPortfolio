@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body class="background">
-    <nav id="desktop-nav">
+    <nav id="desktop-nav" class="navbar">
       <div class="logo">Juan Ignacio Hernández Feser</div>
       <div>
         <ul class="nav-links">
@@ -57,13 +57,13 @@
             src="./assets/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
-            onclick="location.href='https://www.linkedin.com/in/juan-ignacio-hernandez-feser/'"
+            onclick="window.open('https://www.linkedin.com/in/juan-ignacio-hernandez-feser/', '_blank')"
           />
           <img
             src="./assets/github.png"
             alt="My Github profile"
             class="icon"
-            onclick="location.href='https://github.com/JuanHernandezFeser'"
+            onclick="window.open('https://github.com/JuanHernandezFeser', '_blank')"
           />
         </div>
       </div>
@@ -102,12 +102,8 @@
           </div>
           <div class="text-container">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
+              I'm Juani, a fullstack developer with two years of experience using Javascript and Python.
+              I have a great passion for programming and learning new things, working in a group with my coworkers.
             </p>
           </div>
         </div>
@@ -281,13 +277,13 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/JuanHernandezFeser/EncriptadorDeTexto'"
+                onclick="window.open('https://github.com/JuanHernandezFeser/EncriptadorDeTexto', '_blank')"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://juanhernandezfeser.github.io/EncriptadorDeTexto/'"
+                onclick="window.open('https://juanhernandezfeser.github.io/EncriptadorDeTexto/', '_blank')"
               >
                 Live Demo
               </button>
@@ -305,13 +301,13 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/JuanHernandezFeser/laNananaPD'"
+                onclick="window.open('https://github.com/JuanHernandezFeser/laNananaPD', '_blank')"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://juanhernandezfeser.github.io/laNananaPD/'"
+                onclick="window.open('https://juanhernandezfeser.github.io/laNananaPD/', '_blank')"
               >
                 Live Demo
               </button>
@@ -329,13 +325,13 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/JuanHernandezFeser/GariNeon/'"
+                onclick="window.open('https://github.com/JuanHernandezFeser/GariNeon/', '_blank')"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://juanhernandezfeser.github.io/GariNeon/'"
+                onclick="window.open('https://juanhernandezfeser.github.io/GariNeon/', '_blank')"
               >
                 Live Demo
               </button>
@@ -368,10 +364,18 @@
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
-          <p><a href="https://www.linkedin.com/in/juan-ignacio-hernandez-feser/">LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/juan-ignacio-hernandez-feser/" target="_blank">LinkedIn</a></p>
         </div>
       </div>
     </section>
+    <img
+        src="./assets/arrow-top.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="scrollToTop()"
+        id="scrollTopBtn"
+        title="Go to top"
+    />
     <footer>
       <nav>
         <div class="nav-links-container">
