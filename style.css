@@ -16,7 +16,9 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  /* color: rgb(165, 20, 20); */
+  /* color: #000000; */
+  color: #f1faee;
 }
 
 /* TRANSITION */
@@ -49,17 +51,21 @@ a {
   color: black;
   text-decoration: none;
   text-decoration-color: white;
+  color: #FB8500;
 }
 
 a:hover {
   color: grey;
+  color: #219EBC;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: #219EBC;
 }
 
 .logo {
   font-size: 2rem;
+  /* color: #F1FAEE; */
+  color: #FB8500;
 }
 
 .logo:hover {
@@ -197,6 +203,7 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  color: #FB8500;
 }
 
 #socials-container {
@@ -231,7 +238,8 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: #FB8500 0.1rem solid;
+  color: #FB8500;
 }
 
 .btn-color-1:hover,
@@ -241,8 +249,8 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
+  background: #219EBC;
+  color: #000000;
 }
 
 .btn-color-1:hover {
@@ -296,10 +304,10 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  /* background: #88a7d0; */
+  background: #FB8500;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border: #FB8500 0.3rem solid;
   text-align: center;
 }
 
@@ -321,7 +329,9 @@ section {
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  /* color: rgb(85, 85, 85); */
+  color: #F1FAEE;
+  /* color: #88a7d0; */
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -360,8 +370,8 @@ article .icon {
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  /* border-color: #FB8500 0.5rem solid; */
+  background: #023047;
 }
 
 .project-img {
@@ -372,12 +382,14 @@ article .icon {
 
 .project-title {
   margin: 1rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .project-btn {
   color: black;
-  border-color: rgb(163, 163, 163);
+  /* border-color: rgb(163, 163, 163); */
+  border: #FB8500 0.1rem solid;
+  color: #FB8500;
 }
 
 /* CONTACT */
@@ -432,7 +444,7 @@ footer p {
 }
 
 .background {
-  background-color: rgb(209, 209, 209);
+  background-color: #023047;
 }
 
 #scrollTopBtn {
