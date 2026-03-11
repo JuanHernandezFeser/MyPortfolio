@@ -76,7 +76,7 @@ const translations = {
   },
 } as const;
 
-type Translations = typeof translations.es;
+type Translations = { [K in keyof typeof translations.es]: string };
 
 interface LangContextType {
   lang: Lang;
