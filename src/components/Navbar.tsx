@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/hooks/useLang";
 import { Globe } from "lucide-react";
+import logo from "@/assets/border-collie-logo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
