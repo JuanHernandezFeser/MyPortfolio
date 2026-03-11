@@ -33,8 +33,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-heading text-lg font-bold text-primary">
-          JIHF
+        <a href="#hero" className="flex items-center">
+          <img src={logo} alt="Logo" className="h-10 w-auto" />
         </a>
 
         {/* Desktop */}
