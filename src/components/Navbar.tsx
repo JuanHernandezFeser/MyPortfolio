@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/hooks/useLang";
 import { Globe } from "lucide-react";
-import logo from "@/assets/border-collie-logo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,8 +32,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="flex items-center">
-          <img src={logo} alt="Logo" className="h-10 w-auto" />
+        <a href="#hero" className="font-heading text-lg font-bold text-primary">
+          JIHF
         </a>
 
         {/* Desktop */}
