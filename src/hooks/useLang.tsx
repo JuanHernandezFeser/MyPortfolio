@@ -1,0 +1,114 @@
+import { createContext, useContext, useState, useCallback, ReactNode } from "react";
+
+type Lang = "es" | "en";
+
+const translations = {
+  es: {
+    // Navbar
+    navHome: "Inicio",
+    navAbout: "Sobre mí",
+    navSkills: "Skills",
+    navProjects: "Proyectos",
+    navContact: "Contacto",
+    // Hero
+    heroGreeting: "Hola, soy",
+    heroContact: "Contacto",
+    // About
+    aboutSubtitle: "Conóceme",
+    aboutTitle: "Sobre Mí",
+    aboutExperience: "Experiencia",
+    aboutYears: "3+ años",
+    aboutEducation: "Educación",
+    aboutDegree1: "Técnico Superior en Programación",
+    aboutDegree2: "Lic. en Contabilidad",
+    aboutText: "Soy Juani, un desarrollador fullstack con tres años de experiencia acumulada usando tanto JavaScript como Python. Tengo una gran pasión por la programación y el aprendizaje de nuevas tecnologías, trabajando en equipo con mis compañeros para crear soluciones efectivas y escalables.",
+    // Skills
+    skillsSubtitle: "Mis habilidades",
+    skillsTitle: "Skills",
+    experienced: "Experimentado",
+    intermediate: "Intermedio",
+    // Projects
+    projectsSubtitle: "Mi trabajo",
+    projectsTitle: "Proyectos",
+    viewSite: "Ver sitio",
+    projectDesc1: "Herramienta utilizada por el Gobierno de la Ciudad de Buenos Aires para gestionar usuarios, roles y permisos de acceso al visor de mapas.",
+    projectDesc2: "Visor de mapas web que permite a los usuarios interactuar fácilmente con datos territoriales de la Ciudad de Buenos Aires.",
+    projectDesc3: "Aplicación web diseñada para encriptar y desencriptar texto proporcionado por el usuario siguiendo patrones basados en reglas.",
+    projectDesc4: "Aplicación web para promover el alquiler de casas vacacionales en Sierra de la Ventana, Buenos Aires.",
+    projectDesc5: "Sitio web promocional creado para presentar y lanzar el nuevo lanzamiento musical del artista 'GARI'.",
+    // Contact
+    contactSubtitle: "Hablemos",
+    contactTitle: "Contacto",
+    // Footer
+    footerRights: "Todos los derechos reservados.",
+  },
+  en: {
+    navHome: "Home",
+    navAbout: "About Me",
+    navSkills: "Skills",
+    navProjects: "Projects",
+    navContact: "Contact",
+    heroGreeting: "Hello, I'm",
+    heroContact: "Contact",
+    aboutSubtitle: "Get To Know More",
+    aboutTitle: "About Me",
+    aboutExperience: "Experience",
+    aboutYears: "3+ years",
+    aboutEducation: "Education",
+    aboutDegree1: "Higher Technique in Programming",
+    aboutDegree2: "Bachelor's in Accounting",
+    aboutText: "I'm Juani, a fullstack developer with three years of experience using both JavaScript and Python. I have a great passion for programming and learning new things, working in a group with my coworkers to create effective and scalable solutions.",
+    skillsSubtitle: "My abilities",
+    skillsTitle: "Skills",
+    experienced: "Experienced",
+    intermediate: "Intermediate",
+    projectsSubtitle: "My work",
+    projectsTitle: "Projects",
+    viewSite: "Go to Page",
+    projectDesc1: "A tool used by the Government of the City of Buenos Aires to manage users, roles, and access permissions for the map viewer.",
+    projectDesc2: "A web-based map viewer that allows users to easily interact with territorial data from the City of Buenos Aires.",
+    projectDesc3: "A web application designed to encrypt and decrypt user-provided text following specific rule-based patterns.",
+    projectDesc4: "A web application designed to promote the rental of vacation houses in Sierra de la Ventana, Buenos Aires Province, Argentina.",
+    projectDesc5: "A promotional website created to present and launch the new song release by the artist 'GARI'.",
+    contactSubtitle: "Let's Talk",
+    contactTitle: "Contact Me",
+    footerRights: "All rights reserved.",
+  },
+} as const;
+
+type Translations = typeof translations.es;
+
+interface LangContextType {
+  lang: Lang;
+  toggleLang: () => void;
+  t: Translations;
+}
+
+const LangContext = createContext<LangContextType | null>(null);
+
+export const LangProvider = ({ children }: { children: ReactNode }) => {
+  const [lang, setLang] = useState<Lang>(() => {
+    const saved = localStorage.getItem("portfolio-lang");
+    return (saved === "en" || saved === "es") ? saved : "es";
+  });
+
+  const toggleLang = useCallback(() => {
+    setLang((prev) => {
+      const next = prev === "es" ? "en" : "es";
+      localStorage.setItem("portfolio-lang", next);
+      return next;
+    });
+  }, []);
+
+  return (
+    <LangContext.Provider value={{ lang, toggleLang, t: translations[lang] }}>
+      {children}
+    </LangContext.Provider>
+  );
+};
+
+export const useLang = () => {
+  const ctx = useContext(LangContext);
+  if (!ctx) throw new Error("useLang must be used within LangProvider");
+  return ctx;
+};
