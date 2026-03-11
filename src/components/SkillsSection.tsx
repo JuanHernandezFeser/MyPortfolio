@@ -1,29 +1,35 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/hooks/useLang";
 
 const frontendSkills = [
-  { name: "HTML", level: "Experienced" },
-  { name: "CSS", level: "Intermediate" },
-  { name: "React JS", level: "Intermediate" },
-  { name: "JavaScript", level: "Intermediate" },
-  { name: "TypeScript", level: "Intermediate" },
-  { name: "Tailwind", level: "Intermediate" },
-  { name: "Bootstrap", level: "Intermediate" },
-  { name: "WordPress", level: "Intermediate" },
-];
+  { name: "HTML", levelKey: "experienced" },
+  { name: "CSS", levelKey: "intermediate" },
+  { name: "React JS", levelKey: "intermediate" },
+  { name: "JavaScript", levelKey: "intermediate" },
+  { name: "TypeScript", levelKey: "intermediate" },
+  { name: "Tailwind", levelKey: "intermediate" },
+  { name: "Bootstrap", levelKey: "intermediate" },
+  { name: "WordPress", levelKey: "intermediate" },
+] as const;
 
 const backendSkills = [
-  { name: "Python", level: "Experienced" },
-  { name: "Django REST", level: "Experienced" },
-  { name: "Flask", level: "Experienced" },
-  { name: "SQL", level: "Experienced" },
-  { name: "Git", level: "Intermediate" },
-  { name: "QGIS", level: "Intermediate" },
-];
-
-const levelColor = (level: string) =>
-  level === "Experienced" ? "text-primary" : "text-muted-foreground";
+  { name: "Python", levelKey: "experienced" },
+  { name: "Django REST", levelKey: "experienced" },
+  { name: "Flask", levelKey: "experienced" },
+  { name: "SQL", levelKey: "experienced" },
+  { name: "Git", levelKey: "intermediate" },
+  { name: "QGIS", levelKey: "intermediate" },
+] as const;
 
 const SkillsSection = () => {
+  const { t } = useLang();
+
+  const levelColor = (key: string) =>
+    key === "experienced" ? "text-primary" : "text-muted-foreground";
+
+  const levelLabel = (key: string) =>
+    key === "experienced" ? t.experienced : t.intermediate;
+
   return (
     <section id="skills" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
@@ -34,12 +40,11 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm text-primary tracking-widest uppercase mb-2">Mis habilidades</p>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading">Skills</h2>
+          <p className="text-sm text-primary tracking-widest uppercase mb-2">{t.skillsSubtitle}</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading">{t.skillsTitle}</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Frontend */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,14 +59,13 @@ const SkillsSection = () => {
                   <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">{skill.name}</p>
-                    <p className={`text-xs ${levelColor(skill.level)}`}>{skill.level}</p>
+                    <p className={`text-xs ${levelColor(skill.levelKey)}`}>{levelLabel(skill.levelKey)}</p>
                   </div>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Backend */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +80,7 @@ const SkillsSection = () => {
                   <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">{skill.name}</p>
-                    <p className={`text-xs ${levelColor(skill.level)}`}>{skill.level}</p>
+                    <p className={`text-xs ${levelColor(skill.levelKey)}`}>{levelLabel(skill.levelKey)}</p>
                   </div>
                 </div>
               ))}

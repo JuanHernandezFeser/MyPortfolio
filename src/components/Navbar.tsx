@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-const navItems = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Sobre mí", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Contacto", href: "#contact" },
-];
+import { useLang } from "@/hooks/useLang";
+import { Globe } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, toggleLang, t } = useLang();
+
+  const navItems = [
+    { label: t.navHome, href: "#hero" },
+    { label: t.navAbout, href: "#about" },
+    { label: t.navSkills, href: "#skills" },
+    { label: t.navProjects, href: "#projects" },
+    { label: t.navContact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -34,32 +37,50 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex gap-8">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors border border-border rounded-md px-2.5 py-1.5"
+          >
+            <Globe size={14} />
+            {lang === "es" ? "EN" : "ES"}
+          </button>
+        </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {mobileOpen ? (
-              <path d="M18 6L6 18M6 6l12 12" />
-            ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            )}
-          </svg>
-        </button>
+        <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-primary transition-colors border border-border rounded-md px-2 py-1.5"
+          >
+            <Globe size={14} />
+            {lang === "es" ? "EN" : "ES"}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-foreground"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {mobileOpen ? (
+                <path d="M18 6L6 18M6 6l12 12" />
+              ) : (
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
