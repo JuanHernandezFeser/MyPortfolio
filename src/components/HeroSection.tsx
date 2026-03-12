@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Download } from "lucide-react";
 import profilePic from "@/assets/profile-pic.png";
 import { useLang } from "@/hooks/useLang";
 
