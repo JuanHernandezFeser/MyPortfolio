@@ -31,12 +31,20 @@ const HeroSection = () => {
           </h1>
           <p className="text-xl text-muted-foreground mb-8">FullStack Developer</p>
 
-          <div className="flex items-center gap-4 justify-center md:justify-start">
+          <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap">
             <a
               href="#contact"
               className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
             >
               {t.heroContact}
+            </a>
+            <a
+              href="/cv-juan-ignacio-hernandez-feser.pdf"
+              download
+              className="px-6 py-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors font-medium text-sm flex items-center gap-2"
+            >
+              <Download size={18} />
+              {t.heroDownloadCV}
             </a>
             <button
               onClick={openLinkedIn}
