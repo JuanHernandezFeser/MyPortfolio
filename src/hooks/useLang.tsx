@@ -51,6 +51,7 @@ const translations = {
     navContact: "Contact",
     heroGreeting: "Hello, I'm",
     heroContact: "Contact",
+    heroDownloadCV: "Download CV",
     aboutSubtitle: "Get To Know More",
     aboutTitle: "About Me",
     aboutExperience: "Experience",
