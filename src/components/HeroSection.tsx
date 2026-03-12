@@ -6,7 +6,8 @@ import { useLang } from "@/hooks/useLang";
 const LINKEDIN_URL = "https://linkedin.com/in/juan-ignacio-hernandez-feser";
 
 const HeroSection = () => {
-  const { t } = useLang();
+
+  const { lang, toggleLang, t } = useLang();
 
   const openLinkedIn = () => {
     window.open(LINKEDIN_URL, "_blank", "noopener,noreferrer");
@@ -39,7 +40,7 @@ const HeroSection = () => {
               {t.heroContact}
             </a>
             <a
-              href="/cv-juan-ignacio-hernandez-feser.pdf"
+              href={lang === "es" ? "/CV_HernandezFeserJuanIgnacio.pdf" : "/CV_HernandezFeserJuanIgnacio(EN).pdf"}
               download
               className="px-6 py-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors font-medium text-sm flex items-center gap-2"
             >
