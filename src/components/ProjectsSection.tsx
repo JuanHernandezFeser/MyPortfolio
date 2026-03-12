@@ -21,28 +21,25 @@ const ProjectsSection = () => {
       title: "IDECABA Map Viewer",
       description: t.projectDesc2,
       image: project5,
-      liveUrl: "https://mapa.buenosaires.gob.ar/",
+      liveUrl: "https://visualizador-idecaba.buenosaires.gob.ar/#/",
     },
     {
       title: "Text Encryptor",
       description: t.projectDesc3,
       image: project1,
-      githubUrl: "https://github.com/juanhernandezfeser/text-encryptor",
-      liveUrl: "https://juanhernandezfeser.github.io/text-encryptor/",
+      liveUrl: "https://juanhernandezfeser.github.io/EncriptadorDeTexto/",
     },
     {
       title: "La Nanana",
       description: t.projectDesc4,
       image: project2,
-      githubUrl: "https://github.com/juanhernandezfeser/la-nanana",
-      liveUrl: "https://la-nanana.vercel.app/",
+      liveUrl: "https://lananana.com.ar/",
     },
     {
       title: "Gari - NEON",
       description: t.projectDesc5,
       image: project3,
-      githubUrl: "https://github.com/juanhernandezfeser/gari-neon",
-      liveUrl: "https://gari-neon.vercel.app/",
+      liveUrl: "https://juanhernandezfeser.github.io/GariNeon/",
     },
   ];
 
@@ -81,16 +78,6 @@ const ProjectsSection = () => {
                 <h3 className="font-heading font-semibold text-base mb-2">{project.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
                 <div className="flex gap-3">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github size={14} /> Github
-                    </a>
-                  )}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
