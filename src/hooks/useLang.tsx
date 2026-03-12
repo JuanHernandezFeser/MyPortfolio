@@ -10,6 +10,7 @@ const translations = {
     navSkills: "Skills",
     navProjects: "Proyectos",
     navContact: "Contacto",
+    navExperience: "Experiencia",
     // Hero
     heroGreeting: "Hola, soy",
     heroContact: "Contacto",
