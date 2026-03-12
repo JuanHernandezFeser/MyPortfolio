@@ -21,6 +21,13 @@ const backendSkills = [
   { name: "QGIS", levelKey: "intermediate" },
 ] as const;
 
+const aiSkills = [
+  { name: "Prompt Engineering", levelKey: "experienced" },
+  { name: "ChatGPT / GPT API", levelKey: "experienced" },
+  { name: "LLM Integration", levelKey: "intermediate" },
+  { name: "AI-Assisted Dev", levelKey: "experienced" },
+] as const;
+
 const SkillsSection = () => {
   const { t } = useLang();
 
@@ -76,6 +83,27 @@ const SkillsSection = () => {
             <h3 className="font-heading font-semibold text-lg mb-6 text-center">Backend</h3>
             <div className="grid grid-cols-2 gap-4">
               {backendSkills.map((skill) => (
+                <div key={skill.name} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium">{skill.name}</p>
+                    <p className={`text-xs ${levelColor(skill.levelKey)}`}>{levelLabel(skill.levelKey)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="card-elevated rounded-xl p-8 md:col-span-2 max-w-md mx-auto w-full"
+          >
+            <h3 className="font-heading font-semibold text-lg mb-6 text-center">AI & Tools</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {aiSkills.map((skill) => (
                 <div key={skill.name} className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   <div>
