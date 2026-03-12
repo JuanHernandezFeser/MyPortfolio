@@ -5,6 +5,10 @@ import { useLang } from "@/hooks/useLang";
 
 const LINKEDIN_URL = "https://linkedin.com/in/juan-ignacio-hernandez-feser";
 
+const scrollToSection = (href: string) => {
+  document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+};
+
 const HeroSection = () => {
 
   const { lang, toggleLang, t } = useLang();
@@ -35,6 +39,10 @@ const HeroSection = () => {
           <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap">
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#contact");
+              }}
               className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
             >
               {t.heroContact}

@@ -104,7 +104,7 @@ const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => { e.preventDefault(); scrollToSection (item.href); setMobileOpen(false); }}
                 className="block py-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 {item.label}
