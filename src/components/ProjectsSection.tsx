@@ -21,28 +21,25 @@ const ProjectsSection = () => {
       title: "IDECABA Map Viewer",
       description: t.projectDesc2,
       image: project5,
-      liveUrl: "https://mapa.buenosaires.gob.ar/",
+      liveUrl: "https://visualizador-idecaba.buenosaires.gob.ar/#/",
     },
     {
       title: "Text Encryptor",
       description: t.projectDesc3,
       image: project1,
-      githubUrl: "https://github.com/juanhernandezfeser/text-encryptor",
-      liveUrl: "https://juanhernandezfeser.github.io/text-encryptor/",
+      liveUrl: "https://juanhernandezfeser.github.io/EncriptadorDeTexto/",
     },
     {
       title: "La Nanana",
       description: t.projectDesc4,
       image: project2,
-      githubUrl: "https://github.com/juanhernandezfeser/la-nanana",
-      liveUrl: "https://la-nanana.vercel.app/",
+      liveUrl: "https://lananana.com.ar/",
     },
     {
       title: "Gari - NEON",
       description: t.projectDesc5,
       image: project3,
-      githubUrl: "https://github.com/juanhernandezfeser/gari-neon",
-      liveUrl: "https://gari-neon.vercel.app/",
+      liveUrl: "https://juanhernandezfeser.github.io/GariNeon/",
     },
   ];
 
