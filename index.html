@@ -1,17 +1,28 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juan Ignacio Hernández Feser | FullStack Developer</title>
-    <meta name="description" content="Portafolio de Juan Ignacio Hernández Feser, desarrollador FullStack con experiencia en JavaScript, Python, React y Django." />
-    <meta property="og:title" content="Juan Ignacio Hernández Feser | FullStack Developer" />
-    <meta property="og:description" content="Portafolio de desarrollador FullStack" />
-    <meta property="og:type" content="website" />
-  </head>
+<head>
+  <script>
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Ignacio Hernández Feser | FullStack Developer</title>
+  <meta name="description"
+    content="Portafolio de Juan Ignacio Hernández Feser, desarrollador FullStack con experiencia en JavaScript, Python, React y Django." />
+  <meta property="og:title" content="Juan Ignacio Hernández Feser | FullStack Developer" />
+  <meta property="og:description" content="Portafolio de desarrollador FullStack" />
+  <meta property="og:type" content="website" />
+</head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

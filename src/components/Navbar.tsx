@@ -8,6 +8,10 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, toggleLang, t } = useLang();
 
+  const scrollToSection = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const navItems = [
     { label: t.navHome, href: "#hero" },
     { label: t.navAbout, href: "#about" },
@@ -28,9 +32,8 @@ const Navbar = () => {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#hero" className="font-heading text-lg font-bold text-primary">
@@ -42,8 +45,13 @@ const Navbar = () => {
           <ul className="flex gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
+                {/* 👇 ACÁ ESTÁ EL <a DE APERTURA */}
                 <a
                   href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   {item.label}
@@ -85,25 +93,27 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-4"
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </motion.div>
-      )}
-    </motion.nav>
+      {
+        mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-4"
+          >
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </motion.div>
+        )
+      }
+    </motion.nav >
   );
 };
 
