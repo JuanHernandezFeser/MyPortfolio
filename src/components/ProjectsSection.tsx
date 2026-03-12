@@ -78,16 +78,6 @@ const ProjectsSection = () => {
                 <h3 className="font-heading font-semibold text-base mb-2">{project.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
                 <div className="flex gap-3">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github size={14} /> Github
-                    </a>
-                  )}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
