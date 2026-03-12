@@ -21,6 +21,13 @@ const backendSkills = [
   { name: "QGIS", levelKey: "intermediate" },
 ] as const;
 
+const aiSkills = [
+  { name: "Prompt Engineering", levelKey: "experienced" },
+  { name: "ChatGPT / GPT API", levelKey: "experienced" },
+  { name: "LLM Integration", levelKey: "intermediate" },
+  { name: "AI-Assisted Dev", levelKey: "experienced" },
+] as const;
+
 const SkillsSection = () => {
   const { t } = useLang();
 
