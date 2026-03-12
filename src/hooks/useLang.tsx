@@ -13,6 +13,7 @@ const translations = {
     // Hero
     heroGreeting: "Hola, soy",
     heroContact: "Contacto",
+    heroDownloadCV: "Descargar CV",
     // About
     aboutSubtitle: "Conóceme",
     aboutTitle: "Sobre Mí",
