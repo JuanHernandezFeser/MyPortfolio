@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Download } from "lucide-react";
-import profilePic from "@/assets/profile-pic.png";
+import profilePic from "@/assets/foto_cv.jpeg";
 import { useLang } from "@/hooks/useLang";
 
 const LINKEDIN_URL = "https://linkedin.com/in/juan-ignacio-hernandez-feser";
@@ -31,7 +31,8 @@ const HeroSection = () => {
         >
           <p className="text-muted-foreground text-sm tracking-widest uppercase mb-3">{t.heroGreeting}</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-4">
-            Juan Ignacio{" "}
+            Juan Ignacio
+            <br />
             <span className="text-gradient">Hernández Feser</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">FullStack Developer</p>
@@ -48,7 +49,7 @@ const HeroSection = () => {
               {t.heroContact}
             </a>
             <a
-              href={lang === "es" ? "/CV_HernandezFeserJuanIgnacio.pdf" : "/CV_HernandezFeserJuanIgnacio(EN).pdf"}
+              href={lang === "es" ? "./CV_HernandezFeserJuanIgnacio.pdf" : "./CV_HernandezFeserJuanIgnacio(EN).pdf"}
               download
               className="px-6 py-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors font-medium text-sm flex items-center gap-2"
             >
@@ -79,7 +80,7 @@ const HeroSection = () => {
           className="flex-shrink-0"
         >
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-primary/30 glow-border">
-            <img src={profilePic} alt="Juan Ignacio Hernández Feser" className="w-full h-full object-cover" />
+            <img src={profilePic} alt="Juan Ignacio Hernández Feser" className="w-full h-full object-cover" style={{ objectPosition: "50% 25%" }} />
           </div>
         </motion.div>
       </div>

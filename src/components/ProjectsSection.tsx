@@ -6,11 +6,39 @@ import project2 from "@/assets/project-2.png";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.png";
 import project5 from "@/assets/project-5.png";
+import alacancha from "@/assets/alacancha.png";
+import prode from "@/assets/prode.png";
+import koda from "@/assets/koda.png";
+import aiken from "@/assets/aiken.png";
 
 const ProjectsSection = () => {
   const { t } = useLang();
 
   const projects = [
+    {
+      title: "Aiken Blanco",
+      description: t.projectDesc9,
+      image: aiken,
+      liveUrl: "https://www.aikenblanco.com.ar",
+    },
+    {
+      title: "Koda Systems",
+      description: t.projectDesc8,
+      image: koda,
+      liveUrl: "https://www.kodasystems.com.ar",
+    },
+    {
+      title: "Prode Manager",
+      description: t.projectDesc7,
+      image: prode,
+      liveUrl: "https://prode-campera-futbol.vercel.app/",
+    },
+    {
+      title: "A La Cancha Web",
+      description: t.projectDesc6,
+      image: alacancha,
+      liveUrl: "https://www.alacancha.com.ar",
+    },
     {
       title: "Portal IDECABA",
       description: t.projectDesc1,

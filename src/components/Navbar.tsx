@@ -36,7 +36,7 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-heading text-lg font-bold text-primary">
+        <a href="" className="font-heading text-lg font-bold text-primary">
           JIHF
         </a>
 

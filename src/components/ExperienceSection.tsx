@@ -7,18 +7,25 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
-      company: "Geosystems S.A.",
+      company: "Koda Systems",
       role: t.expRole1,
       period: t.expPeriod1,
-      bullets: [t.expBullet1a, t.expBullet1b, t.expBullet1c, t.expBullet1d],
-      tech: ["Python", "JavaScript", "PostgreSQL", "QGIS"],
+      bullets: [t.expBullet1a, t.expBullet1b, t.expBullet1c],
+      tech: ["React", "Node.js", "Python", "PostgreSQL", "Vercel", "Cloudflare"],
     },
     {
-      company: "Paradigma del Sur S.A.",
+      company: "Geosystems S.A.",
       role: t.expRole2,
       period: t.expPeriod2,
       bullets: [t.expBullet2a, t.expBullet2b, t.expBullet2c],
-      tech: ["Django", "Flask", "React", "TypeScript", "PostgreSQL"],
+      tech: ["Python", "PyQt", "JavaScript", "PostgreSQL", "QGIS"],
+    },
+    {
+      company: "Paradigma del Sur S.A.",
+      role: t.expRole3,
+      period: t.expPeriod3,
+      bullets: [t.expBullet3a, t.expBullet3b, t.expBullet3c, t.expBullet3d],
+      tech: ["Django", "Flask", "React", "TypeScript", "PostgreSQL", "MySQL"],
     },
   ];
 
