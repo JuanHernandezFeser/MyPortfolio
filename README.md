@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# Portfolio — Juan Ignacio Hernández Feser
 
-## Project info
+Portafolio personal de **Juan Ignacio Hernández Feser**, desarrollador FullStack (JavaScript / Python). Sitio bilingüe (ES/EN) con secciones de inicio, sobre mí, skills, proyectos, experiencia y contacto.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Sitio en vivo
 
-## How can I edit this code?
+**https://juanhernandezfeser.github.io/MyPortfolio/**
 
-There are several ways of editing your application.
+## Tecnologías
 
-**Use Lovable**
+- [Vite](https://vitejs.dev/) + [React 18](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- [Framer Motion](https://www.framer.com/motion/) para animaciones
+- [React Router](https://reactrouter.com/)
+- [Lucide](https://lucide.dev/) para iconos
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Requisitos
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js y npm instalados ([nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Desarrollo local
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Clonar el repositorio
+git clone https://github.com/JuanHernandezFeser/MyPortfolio.git
+cd MyPortfolio
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+# 2. Instalar dependencias
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Levantar el servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Comando            | Descripción                              |
+| ------------------ | ---------------------------------------- |
+| `npm run dev`      | Servidor de desarrollo (puerto 8080)     |
+| `npm run build`    | Build de producción en `dist/`           |
+| `npm run lint`     | Ejecuta ESLint                           |
+| `npm run test`     | Ejecuta los tests con Vitest             |
+| `npm run preview`  | Previsualiza el build localmente         |
+| `npm run deploy`   | Build + publica `dist/` en la rama `gh-pages` |
 
-**Use GitHub Codespaces**
+## Deploy en GitHub Pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+El sitio se publica en GitHub Pages desde la rama `gh-pages`, que contiene únicamente el `dist/` compilado:
 
-## What technologies are used for this project?
+1. Compilar y publicar:
 
-This project is built with:
+   ```sh
+   npm run deploy
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. En el repositorio, verificar en **Settings → Pages** que la fuente sea **Deploy from a branch** con la rama **`gh-pages`** en `/ (root)`.
 
-## How can I deploy this project?
+> Nota: por ser un sitio de proyecto, la URL lleva el prefijo `/MyPortfolio/`. La config `base: "/MyPortfolio/"` ya está definida en `vite.config.ts`.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Estructura principal
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+├── assets/          # Imágenes y recursos
+├── components/      # Secciones y componentes de UI
+│   ├── ProjectsSection.tsx
+│   ├── ExperienceSection.tsx
+│   └── ...
+├── hooks/           # Hooks personalizados (useLang, etc.)
+└── App.tsx
+```

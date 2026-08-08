@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
-import project1 from "@/assets/project-1.png";
 import project2 from "@/assets/project-2.png";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.png";
@@ -22,6 +21,12 @@ const ProjectsSection = () => {
       liveUrl: "https://www.aikenblanco.com.ar",
     },
     {
+      title: "A La Cancha Web",
+      description: t.projectDesc6,
+      image: alacancha,
+      liveUrl: "https://www.alacancha.com.ar",
+    },
+    {
       title: "Koda Systems",
       description: t.projectDesc8,
       image: koda,
@@ -34,12 +39,6 @@ const ProjectsSection = () => {
       liveUrl: "https://prode-campera-futbol.vercel.app/",
     },
     {
-      title: "A La Cancha Web",
-      description: t.projectDesc6,
-      image: alacancha,
-      liveUrl: "https://www.alacancha.com.ar",
-    },
-    {
       title: "Portal IDECABA",
       description: t.projectDesc1,
       image: project4,
@@ -50,12 +49,6 @@ const ProjectsSection = () => {
       description: t.projectDesc2,
       image: project5,
       liveUrl: "https://visualizador-idecaba.buenosaires.gob.ar/#/",
-    },
-    {
-      title: "Text Encryptor",
-      description: t.projectDesc3,
-      image: project1,
-      liveUrl: "https://juanhernandezfeser.github.io/EncriptadorDeTexto/",
     },
     {
       title: "La Nanana",
